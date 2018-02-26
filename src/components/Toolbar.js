@@ -62,7 +62,10 @@ render() {
                     className="btn btn-default" 
                     disabled={`${ this.props.disabledDeleteMessageButton() }`}
                 >
-                <i className="fa fa-trash-o"></i>
+                <i 
+                    className="fa fa-trash-o"
+                    onClick={ () => this.props.deleteMessage() }
+                ></i>
                 </button>
             </div>
             </div>

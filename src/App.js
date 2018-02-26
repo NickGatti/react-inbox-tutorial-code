@@ -198,6 +198,9 @@ class App extends Component {
     this.setState({
       messages: this.state.messages.filter( message => {
         return !message.selected
+      } ).map( message => {
+        message.selected = false
+        return message
       } )
     })
   }
@@ -218,6 +221,7 @@ class App extends Component {
           disabledRemoveLabelDropDown={ this.disabledRemoveLabelDropDown }
           applyLabelAction={ this.applyLabelAction }
           removeLabelAction={ this.removeLabelAction }
+          deleteMessage={ this.deleteMessage }
         />
         <MessageList 
           messages={ this.state.messages }
